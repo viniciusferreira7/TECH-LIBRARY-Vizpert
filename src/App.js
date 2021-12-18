@@ -1,23 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import bg_stripesSvg from './assets/bg_stripes.svg'
+import Bookcase from './components/Bookcase';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <img id='bg_stripesId' src={bg_stripesSvg} alt="bg_stripes" />
+     <Bookcase/>
     </div>
   );
 }
