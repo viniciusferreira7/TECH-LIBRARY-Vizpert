@@ -1,10 +1,9 @@
 import React from 'react'
-import Ground from '../components svg/Ground.js'
-
+import './Ground.css'
 function Floor() {
     return (
         <div className='Floor'>
-            <Ground/>
+
         </div>
     )
 }

@@ -1,10 +1,10 @@
 import React from 'react'
-import BgStripes from '../components svg/Bg_stripes'
+import './Wall.css'
 
 function Wall() {
     return (
         <div className='Wall'>
-           <BgStripes/>
+            
         </div>
     )
 }
