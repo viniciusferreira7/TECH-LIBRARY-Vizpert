@@ -1,12 +1,12 @@
 import './App.css';
-import bg_stripesSvg from './assets/bg_stripes.svg'
-import Bookcase from './components/Bookcase';
+import Floor from './components/Floor';
+import Wall from './components/Wall';
 
 function App() {
   return (
     <div className="App">
-     <img id='bg_stripesId' src={bg_stripesSvg} alt="bg_stripes" />
-     <Bookcase/>
+     <Wall/>
+    <Floor/>
     </div>
   );
 }
