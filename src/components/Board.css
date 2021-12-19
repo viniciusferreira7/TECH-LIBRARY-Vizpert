@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    height: 100%;
+}
+
+.Board{
+    width:600px;
+    height: 250px;
+    background-image: url('../assets/board.svg');
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 30px;
+    left: 2%;
+    z-index: 1;
+}
+
+.Board h2{
+    color: #e7dfef;
+    font-size:16px;
+    font-weight:300;
+    font-family: "Roboto Slab";
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    position: absolute;
+    top: 20px;
+    right:110px;
+}
+
+.Filter-Wraper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:245px ;
+    height: 60px;
+    position: absolute;
+    top: 40px;
+    right: 45px;
+}
+
+.Filter-Button{
+    width: 40px;
+    height: 40px;
+    background-image: url('../assets/filter_button.svg');
+    background-size: 100% 100%;
+}
+
+.Active{
+    background-image: url('../assets/filter_button_active.svg');
+}
+
+
+.Filter-Aphabetic{
+    width: 20px;
+    height: 20px;
+    background-image: url('../assets/filter_alphabetic.svg');
+    background-size: 100% 100%;
+    background-image: center;
+}
+/*
+.Filter-Colors{
+    width: 50px;
+    height: 100%;
+    background-image: url('../assets/filter_colors.svg');
+    background-size: 100% 100%;
+}
+
+.Filter-Sizes{
+    width: 50px;
+    height: 100%;
+    background-image: url('../assets/filter_sizes.svg');
+    background-size: 100% 100%;
+}
+*/
+
+.Line{
+    width:220px;
+    height: 5px;
+    background-color: #e7dfef;
+    position: absolute;
+    bottom: 50%;
+    right:60px ;
+    transform: translateY(-50%);
+}
+
+.Button{
+    width: 245px;
+    height: 60px;
+    background-image: url('../assets/button.svg');
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom:50px;
+    right:45px;
+    cursor: pointer;
+    
+}
