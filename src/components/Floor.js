@@ -1,5 +1,5 @@
 import React from 'react'
-import './Ground.css'
+import './Floor.css'
 function Floor() {
     return (
         <div className='Floor'>

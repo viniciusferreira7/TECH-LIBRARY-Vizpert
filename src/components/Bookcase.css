@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    height: 100%;
+}
+
+.Bookcase{
+    width: 1000px;
+    height: 520px;
+    background-image: url('../assets/bookcase.svg');
+    background-color: transparent;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 13%;
+    left: 21%;
+}

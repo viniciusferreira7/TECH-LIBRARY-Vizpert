@@ -12,4 +12,5 @@ html,body{
     height: 50%;
     min-height:380px;
     background-image: url('../assets/ground.svg');
+    background-color: #633585;
 }

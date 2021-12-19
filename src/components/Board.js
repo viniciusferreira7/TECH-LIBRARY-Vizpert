@@ -6,15 +6,15 @@ function Board() {
         <div className='Board'>
             <h2>Sort by</h2>
             <div className="Filter-Wraper">
-                <div className="Fliter-Button">
+                <button className="Filter-Button">
                     <div className="Filter-Aphabetic"></div>
-                </div>
-                <div className="Fliter-Button">
+                </button>
+                <button className="Filter-Button">
                     <div className="Filter-Colors"></div>
-                </div>
-                <div className="Fliter-Button">
+                </button>
+                <button className="Filter-Button">
                     <div className="Filter-Sizes"></div>
-                </div>
+                </button>
             </div>
             <div className='Line'></div>
             <div className='Button'></div>
@@ -23,3 +23,5 @@ function Board() {
 }
 
 export default Board
+
+//Espaçamento dos Filter-Button

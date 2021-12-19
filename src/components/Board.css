@@ -20,8 +20,8 @@ html,body{
 
 .Board h2{
     color: #e7dfef;
-    font-size:16px;
-    font-weight:300;
+    font-size:15px;
+    font-weight:400;
     font-family: "Roboto Slab";
     text-transform: uppercase;
     letter-spacing: 7px;
@@ -34,18 +34,25 @@ html,body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width:245px ;
+    width:260px ;
     height: 60px;
     position: absolute;
-    top: 40px;
-    right: 45px;
+    top: 45px;
+    right: 40px;
 }
 
 .Filter-Button{
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 64px;
     background-image: url('../assets/filter_button.svg');
-    background-size: 100% 100%;
+    background-size: cover;
+    border: 0;
+    background-color:transparent;
+    cursor: pointer;
+}
+
+.Filter-Button:nth-of-type(2){
+    margin: 0 23px;
 }
 
 .Active{
@@ -58,43 +65,50 @@ html,body{
     height: 20px;
     background-image: url('../assets/filter_alphabetic.svg');
     background-size: 100% 100%;
-    background-image: center;
+    position:relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
-/*
+
 .Filter-Colors{
-    width: 50px;
-    height: 100%;
+    width: 20px;
+    height: 20px;
     background-image: url('../assets/filter_colors.svg');
     background-size: 100% 100%;
+    position:relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .Filter-Sizes{
-    width: 50px;
-    height: 100%;
+    width: 20px;
+    height: 20px;
     background-image: url('../assets/filter_sizes.svg');
     background-size: 100% 100%;
+    position:relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
-*/
 
 .Line{
-    width:220px;
+    width:210px;
     height: 5px;
     background-color: #e7dfef;
     position: absolute;
-    bottom: 50%;
-    right:60px ;
+    bottom: 48%;
+    right:65px ;
     transform: translateY(-50%);
 }
 
 .Button{
-    width: 245px;
-    height: 60px;
+    width: 300px;
+    height: 57px;
     background-image: url('../assets/button.svg');
-    background-position: 100% 100%;
+    background-position:contain ;
     background-repeat: no-repeat;
+    background-position: center;
     position: absolute;
     bottom:50px;
-    right:45px;
+    right:20px;
     cursor: pointer;
-    
 }
