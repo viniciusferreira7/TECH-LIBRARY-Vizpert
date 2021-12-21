@@ -1,11 +1,15 @@
 import React from 'react'
+import $ from 'jquery'
 import './Board.css'
 
 function Board() {
 
-    const handleClick = (e)=>{
-        e.target.classList.add('Active')
-        document.getElementsByClassName('Filter-Button').classList ='Filter-Button'
+    const handleClick = () =>{
+        $('.Filter-Button').click(function(){
+            $('.Filter-Button').removeClass('Active')
+            $(this).addClass('Active')
+
+        })
     }
 
     return (
@@ -25,8 +29,11 @@ function Board() {
 
             <div className='Line'></div>
             <div className='Button'></div>
+            
         </div>
     )
 }
 
 export default Board
+
+//Componente Lady da em cima do componete Board

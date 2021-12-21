@@ -39,6 +39,7 @@ html,body{
     position: absolute;
     top: 45px;
     right: 40px;
+    z-index: 99;
 }
 
 .Filter-Button{
