@@ -37,42 +37,42 @@ html,body{
     cursor: pointer;
 }
 
-.book-A{
+#book-A{
     background-image: url('../assets/book_a.svg');
 }
 
-.book-B{
+#book-B{
     background-image: url('../assets/book_b.svg');
 }
 
-.book-C{
+#book-C{
     background-image: url('../assets/book_c.svg');
 }
 
-.book-D{
+#book-D{
     background-image: url('../assets/book_d.svg');
 }
 
-.book-E{
+#book-E{
     background-image: url('../assets/book_e.svg');
 }
 
-.book-F{
+#book-F{
     background-image: url('../assets/book_f.svg');
 }
 
-.book-G{
+#book-G{
     background-image: url('../assets/book_g.svg');
 }
 
-.book-H{
+#book-H{
     background-image: url('../assets/book_h.svg');
 }
 
-.book-I{
+#book-I{
     background-image: url('../assets/book_i.svg');
 }
 
-.book-J{
+#book-J{
     background-image: url('../assets/book_a.svg');
 }

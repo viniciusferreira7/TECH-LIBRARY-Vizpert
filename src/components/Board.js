@@ -1,19 +1,22 @@
 import React from 'react'
 import $ from 'jquery'
 import './Board.css'
+import Bookcase from './Bookcase'
 
-function Board() {
+function Board({findActive}) {
 
     const handleClick = () =>{
         $('.Filter-Button').click(function(){
             $('.Filter-Button').removeClass('Active')
             $(this).addClass('Active')
-
         })
     }
 
+    
+
     return (
         <div className='Board'>
+            <Bookcase ></Bookcase>
             <h2>Sort by</h2>
             <div className="Filter-Wraper">
                 <button className="Filter-Button" onClick={handleClick}>
@@ -28,7 +31,7 @@ function Board() {
             </div>
 
             <div className='Line'></div>
-            <div className='Button'></div>
+            <div className='Button' onClick={() => findActive()}></div>
             
         </div>
     )

@@ -1,52 +1,35 @@
-import React from "react";
-import {DragDropContext , Droppable, Draggable} from 'react-beautiful-dnd';
+import React,{useState} from "react";
+import $ from 'jquery';
+import Board from "./Board";
 import './Bookcase.css'
 
 
 function Bookcase(){
+    
+     const findActive = () =>{
+         if ($('.Filter-Button').hasClass('Active')){
+             console.log('tem')
+         }
+     }
+
+    const [filter, setFilter] = useState({
+        aphabeetic: ['book-A', 'book-B','book-C','book-D','book-E','book-F','book-G','book-H','book-I'],
+
+        colors:['book-B', 'book-C','book-A','book-A','book-I','book-E','book-H','book-D','book-G',],
+    
+        sizes:['book-C','book-D','book-H','book-A','book-A','book-I','book-B','book-F','book-G','book-E']
+    })
+
+
+
     return(
         <div className="Bookcase">
-            <DragDropContext>
-                <Droppable id="books">
-                    {(provided) =>(
-                        <div className="Shelf" {...provided.droppableProps} ref={provided.innerRef}>
-                            <Draggable>
-                                {(provided) =>(
-                                    <figure {...provided.draggableProps}
-                                    ref={provided.innerRef}  className="book-A books"></figure>
-                                )}
-                            </Draggable>    
-                            <Draggable>
-                                <figure className="book-B books"></figure>
-                            </Draggable>
-                            <Draggable>
-                                <figure className="book-C books"></figure>
-                            </Draggable>    
-                            <Draggable>
-                                <figure className="book-D books"></figure>
-                            </Draggable>
-                            <Draggable>
-                                <figure className="book-E books"></figure>
-                            </Draggable>    
-                            <Draggable>
-                                <figure className="book-F books"></figure>
-                            </Draggable>
-                            <Draggable>
-                                <figure className="book-G books"></figure>
-                            </Draggable>    
-                            <Draggable>
-                                <figure className="book-H books"></figure>
-                            </Draggable>
-                            <Draggable>
-                                <figure className="book-I books"></figure>
-                            </Draggable>
-                            <Draggable>
-                                <figure className="book-J books"></figure>
-                            </Draggable>    
-                        </div>
-                    )}
-                </Droppable>
-            </DragDropContext>
+            <div className="Shelf">  
+                {filter.colors.map((item, index) =>{
+                   return( <figure id={item} key={index} className="books"></figure>)
+                })}
+            </div>
+            <Board findActive={findActive}/>
         </div>
     )
 }
