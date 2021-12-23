@@ -10,7 +10,7 @@ html,body{
 .board{
     width:600px;
     height: 250px;
-    background-image: url('../assets/board.svg');
+    background-image: url('../../assets/board.svg');
     background-size: 100% 100%;
     position: relative;
     top:70%;
@@ -45,7 +45,7 @@ html,body{
 .filter-button{
     width: 60px;
     height: 64px;
-    background-image: url('../assets/filter_button.svg');
+    background-image: url('../../assets/filter_button.svg');
     background-size: cover;
     border: 0;
     background-color:transparent;
@@ -57,14 +57,14 @@ html,body{
 }
 
 .active{
-    background-image: url('../assets/filter_button_active.svg');
+    background-image: url('../../assets/filter_button_active.svg');
 }
 
 
 .filter-aphabetic{
     width: 20px;
     height: 20px;
-    background-image: url('../assets/filter_alphabetic.svg');
+    background-image: url('../../assets/filter_alphabetic.svg');
     background-size: 100% 100%;
     position:relative;
     left: 50%;
@@ -74,7 +74,7 @@ html,body{
 .filter-colors{
     width: 20px;
     height: 20px;
-    background-image: url('../assets/filter_colors.svg');
+    background-image: url('../../assets/filter_colors.svg');
     background-size: 100% 100%;
     position:relative;
     left: 50%;
@@ -84,7 +84,7 @@ html,body{
 .filter-sizes{
     width: 20px;
     height: 20px;
-    background-image: url('../assets/filter_sizes.svg');
+    background-image: url('../../assets/filter_sizes.svg');
     background-size: 100% 100%;
     position:relative;
     left: 50%;
@@ -104,7 +104,7 @@ html,body{
 .button-organize{
     width: 300px;
     height: 57px;
-    background-image: url('../assets/button.svg');
+    background-image: url('../../assets/button.svg');
     background-position:contain ;
     background-repeat: no-repeat;
     background-position: center;

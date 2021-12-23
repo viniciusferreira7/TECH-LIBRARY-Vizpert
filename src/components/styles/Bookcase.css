@@ -10,7 +10,7 @@ html,body{
 .bookcase{
     width: 1000px;
     height: 520px;
-    background-image: url('../assets/bookcase.svg');
+    background-image: url('../../assets/bookcase.svg');
     background-color: transparent;
     background-position:100% 100%;
     background-repeat: no-repeat;
@@ -38,41 +38,41 @@ html,body{
 }
 
 #book-A{
-    background-image: url('../assets/book_a.svg');
+    background-image: url('../../assets/book_a.svg');
 }
 
 #book-B{
-    background-image: url('../assets/book_b.svg');
+    background-image: url('../../assets/book_b.svg');
 }
 
 #book-C{
-    background-image: url('../assets/book_c.svg');
+    background-image: url('../../assets/book_c.svg');
 }
 
 #book-D{
-    background-image: url('../assets/book_d.svg');
+    background-image: url('../../assets/book_d.svg');
 }
 
 #book-E{
-    background-image: url('../assets/book_e.svg');
+    background-image: url('../../assets/book_e.svg');
 }
 
 #book-F{
-    background-image: url('../assets/book_f.svg');
+    background-image: url('../../assets/book_f.svg');
 }
 
 #book-G{
-    background-image: url('../assets/book_g.svg');
+    background-image: url('../../assets/book_g.svg');
 }
 
 #book-H{
-    background-image: url('../assets/book_h.svg');
+    background-image: url('../../assets/book_h.svg');
 }
 
 #book-I{
-    background-image: url('../assets/book_i.svg');
+    background-image: url('../../assets/book_i.svg');
 }
 
 #book-J{
-    background-image: url('../assets/book_a.svg');
+    background-image: url('../../assets/book_a.svg');
 }

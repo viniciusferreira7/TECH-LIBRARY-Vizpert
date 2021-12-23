@@ -10,7 +10,7 @@ html,body{
 .clock{
     width: 180px;
     height: 180px;
-    background-image: url('../assets/clock_base.svg');
+    background-image: url('../../assets/clock_base.svg');
     position:absolute;
     top: 90px;
     left: 10%;

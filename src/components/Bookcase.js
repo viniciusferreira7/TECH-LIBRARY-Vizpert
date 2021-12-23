@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import Board from "./Board";
-import './Bookcase.css'
+import './styles/Bookcase.css'
 
 
 function Bookcase(){

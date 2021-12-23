@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import $ from 'jquery'
-import './Board.css'
+import './styles/Board.css'
 
 function Board({setProps}) {
 

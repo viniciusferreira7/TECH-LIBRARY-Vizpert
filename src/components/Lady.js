@@ -1,5 +1,5 @@
 import React from 'react'
-import './Lady.css';
+import './styles/Lady.css';
 
 function Lady() {
     return (
