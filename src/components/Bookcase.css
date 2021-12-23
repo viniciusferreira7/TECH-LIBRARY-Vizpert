@@ -7,7 +7,7 @@ html,body{
     height: 100%;
 }
 
-.Bookcase{
+.bookcase{
     width: 1000px;
     height: 520px;
     background-image: url('../assets/bookcase.svg');
@@ -19,7 +19,7 @@ html,body{
     left: 21%;
 }
 
-.Shelf{
+.shelf{
     display: flex;
     width: 460px;
     height: 113px;

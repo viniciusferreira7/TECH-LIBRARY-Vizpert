@@ -2,7 +2,7 @@ import React from 'react'
 import './Floor.css'
 function Floor() {
     return (
-        <div className='Floor'>
+        <div className='floor'>
 
         </div>
     )

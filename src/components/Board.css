@@ -7,7 +7,7 @@ html,body{
     height: 100%;
 }
 
-.Board{
+.board{
     width:600px;
     height: 250px;
     background-image: url('../assets/board.svg');
@@ -18,7 +18,7 @@ html,body{
     z-index: 1;
 }
 
-.Board h2{
+.board h2{
     color: #e7dfef;
     font-size:15px;
     font-weight:400;
@@ -30,7 +30,7 @@ html,body{
     right:110px;
 }
 
-.Filter-Wraper{
+.button-wraper{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +42,7 @@ html,body{
     z-index: 99;
 }
 
-.Filter-Button{
+.filter-button{
     width: 60px;
     height: 64px;
     background-image: url('../assets/filter_button.svg');
@@ -52,16 +52,16 @@ html,body{
     cursor: pointer;
 }
 
-.Filter-Button:nth-of-type(2){
+.filter-button:nth-of-type(2){
     margin: 0 23px;
 }
 
-.Active{
+.active{
     background-image: url('../assets/filter_button_active.svg');
 }
 
 
-.Filter-Aphabetic{
+.filter-aphabetic{
     width: 20px;
     height: 20px;
     background-image: url('../assets/filter_alphabetic.svg');
@@ -71,7 +71,7 @@ html,body{
     transform: translateX(-50%);
 }
 
-.Filter-Colors{
+.filter-colors{
     width: 20px;
     height: 20px;
     background-image: url('../assets/filter_colors.svg');
@@ -81,7 +81,7 @@ html,body{
     transform: translateX(-50%);
 }
 
-.Filter-Sizes{
+.filter-sizes{
     width: 20px;
     height: 20px;
     background-image: url('../assets/filter_sizes.svg');
@@ -101,7 +101,7 @@ html,body{
     transform: translateY(-50%);
 }
 
-.Button{
+.button-organize{
     width: 300px;
     height: 57px;
     background-image: url('../assets/button.svg');

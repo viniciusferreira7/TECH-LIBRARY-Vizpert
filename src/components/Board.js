@@ -1,14 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import $ from 'jquery'
 import './Board.css'
 
 function Board({setProps}) {
 
+    const [count, setCount] = useState(0)
+
 
     const handleClick = () =>{
-        $('.Filter-Button').click(function(){
-            $('.Filter-Button').removeClass('Active')
-            $(this).addClass('Active')
+        $('.filter-button').click(function(){
+            $('.filter-button').removeClass('active')
+            $(this).addClass('active')
         })
         
     }
@@ -16,54 +18,76 @@ function Board({setProps}) {
     
 
     const findActive = () =>{
-        if ($('.Filter-Button').hasClass('Active')){
-                if($('#aphabetic').hasClass('Active')){
-                     setProps((prevAphabetic) =>{
-                        return {...prevAphabetic, sort:['book-A', 'book-B','book-C','book-D','book-E','book-F','book-G','book-H','book-I']}
-                    })
-                    
-                    $('.Button').click(() =>{
-                        setProps((prevAphabeticR) =>{
-                            return {...prevAphabeticR, sort:['book-A', 'book-B','book-C','book-D','book-E','book-F','book-G','book-H','book-I'].reverse()}
+       
+        if ($('.filter-button').hasClass('active')){
+            setCount(count + 1)
+                if($('#aphabetic').hasClass('active')){
+                
+                    if(count >= 1){
+                        setProps((prevAphabetic) =>{
+                            return {...prevAphabetic, sequence:['book-A', 'book-B','book-C','book-D','book-E','book-F','book-G','book-H','book-I'].reverse()}                        
                         })
-                       
-                    })
+                        
+                        setCount(0)
+                    }else{
+                        setProps((prevAphabetic) =>{
+                            return {...prevAphabetic, sequence:['book-A', 'book-B','book-C','book-D','book-E','book-F','book-G','book-H','book-I']}                        
+                        })
 
+                    }
                 }
-                if($('#colors').hasClass('Active')){
-                    console.log('c')
+                if($('#colors').hasClass('active')){
+                   if(count >=1){
                     setProps((prevColors) =>{
-                        return {...prevColors, sort:['book-B', 'book-C','book-A','book-A','book-I','book-E','book-H','book-D','book-G',]}
+                        return {...prevColors, sequence:['book-B', 'book-C','book-A','book-A','book-I','book-E','book-H','book-D','book-G',].reverse()}
                     })
-                }
-                if($('#sizes').hasClass('Active')){
-                    setProps((prevSizes) =>{
-                        return {...prevSizes, sort:['book-C','book-D','book-H','book-A','book-A','book-I','book-B','book-F','book-G','book-E']}
 
+                    setCount(0)
+
+                   }else{
+                    setProps((prevColors) =>{
+                        return {...prevColors, sequence:['book-B', 'book-C','book-A','book-A','book-I','book-E','book-H','book-D','book-G',]}
                     })
+                   }
                 }
+                if($('#sizes').hasClass('active')){
+                    
+                    if(count >= 1){
+                        setProps((prevSizes) =>{
+                            return {...prevSizes, sequence:['book-C','book-D','book-H','book-A','book-A','book-I','book-B','book-F','book-G','book-E'].reverse()}
+                        })
+                        
+                        setCount(0)
+                    
+                    }else{
+                        setProps((prevSizes) =>{
+                        return {...prevSizes, sequence:['book-C','book-D','book-H','book-A','book-A','book-I','book-B','book-F','book-G','book-E']}
+                        })  
+                    }
+                }
+
         }
+        
     }
-
         
 
     return (
-        <div className='Board'>
+        <div className='board'>
             <h2>Sort by</h2>
-            <div className="Filter-Wraper">
-                <button  id='aphabetic' className="Filter-Button Aphabetic" onClick={handleClick}>
-                    <div className="Filter-Aphabetic"></div>
+            <div className="button-wraper">
+                <button  id='aphabetic' className='filter-button' onClick={handleClick}>
+                    <div className="filter-aphabetic"></div>
                 </button>
-                <button id='colors' className="Filter-Button Colors" onClick={handleClick}>
-                    <div className="Filter-Colors"></div>
+                <button id='colors' className="filter-button" onClick={handleClick}>
+                    <div className="filter-colors"></div>
                 </button>
-                <button id='sizes' className="Filter-Button" onClick={handleClick}>
-                    <div  className="Filter-Sizes"></div>
+                <button id='sizes' className="filter-button" onClick={handleClick}>
+                    <div  className="filter-sizes"></div>
                 </button>
             </div>
 
             <div className='Line'></div>
-            <div className='Button' onClick={ findActive}></div>
+            <div className='button-organize' onClick={findActive}></div>
             
         </div>
     )

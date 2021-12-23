@@ -3,7 +3,7 @@ import './Clock.css'
 
 function Clock() {
     return (
-        <div className='Clock'>
+        <div className='clock'>
             
         </div>
     )

@@ -3,7 +3,7 @@ import './Wall.css'
 
 function Wall() {
     return (
-        <div className='Wall'>
+        <div className='wall'>
             
         </div>
     )
