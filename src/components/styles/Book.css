@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    height: 100%;
+}
+
+.books{
+    width: calc(100% / 9);
+    height: 100%;
+    background-position:cover;
+    background-repeat: no-repeat;
+    cursor: grab;
+    background-size:100% 100%;
+    background-position: center;
+
+}
+
+.books:nth-of-type(10n + 1){
+    background-image:url('../../assets/book_a.svg') ;
+
+}
+.books:nth-of-type(10n + 2){
+    background-image:url('../../assets/book_b.svg') ;
+
+}
+.books:nth-of-type(10n + 3){
+    background-image:url('../../assets/book_c.svg') ;
+
+}
+.books:nth-of-type(10n + 4){
+    background-image:url('../../assets/book_d.svg') ;
+
+}
+.books:nth-of-type(10n + 5){
+    background-image:url('../../assets/book_e.svg') ;
+
+}
+.books:nth-of-type(10n + 6){
+    background-image:url('../../assets/book_f.svg') ;
+
+}
+.books:nth-of-type(10n + 7){
+    background-image:url('../../assets/book_g.svg') ;
+
+}
+.books:nth-of-type(10n + 8){
+    background-image:url('../../assets/book_h.svg') ;
+
+}
+.books:nth-of-type(10n + 9){
+    background-image:url('../../assets/book_i.svg') ;
+
+}

@@ -19,8 +19,20 @@ html,body{
     left: 21%;
 }
 
-.shelf{
+.shelf-1{
     display: flex;
+    justify-content: space-around;
+    width: 460px;
+    height: 113px;
+    position: absolute;
+    top: 88px;
+    left: 234px;
+    padding: 0 5px;
+}
+
+.shelf-2{
+    display: flex;
+    justify-content: space-around;
     width: 460px;
     height: 113px;
     position: absolute;

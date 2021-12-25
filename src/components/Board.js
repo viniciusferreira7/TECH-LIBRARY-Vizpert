@@ -7,11 +7,10 @@ function Board({setProps}) {
     const [count, setCount] = useState(0)
 
 
-    const handleClick = () =>{
-        $('.filter-button').click(function(){
+    const handleClick = (e) =>{
             $('.filter-button').removeClass('active')
-            $(this).addClass('active')
-        })
+            e.target.classList.add('active')
+        
         
     }
 
@@ -39,14 +38,14 @@ function Board({setProps}) {
                 if($('#colors').hasClass('active')){
                    if(count >=1){
                     setProps((prevColors) =>{
-                        return {...prevColors, sequence:['book-B', 'book-C','book-A','book-A','book-I','book-E','book-H','book-D','book-G',].reverse()}
+                        return {...prevColors, sequence:['book-B', 'book-C','book-A','book-I','book-E','book-H','book-D','book-F','book-G',].reverse()}
                     })
 
                     setCount(0)
 
                    }else{
                     setProps((prevColors) =>{
-                        return {...prevColors, sequence:['book-B', 'book-C','book-A','book-A','book-I','book-E','book-H','book-D','book-G',]}
+                        return {...prevColors, sequence:['book-B', 'book-C','book-A','book-I','book-E','book-H','book-D','book-F','book-G',]}
                     })
                    }
                 }
@@ -54,14 +53,14 @@ function Board({setProps}) {
                     
                     if(count >= 1){
                         setProps((prevSizes) =>{
-                            return {...prevSizes, sequence:['book-C','book-D','book-H','book-A','book-A','book-I','book-B','book-F','book-G','book-E'].reverse()}
+                            return {...prevSizes, sequence:['book-C','book-D','book-H','book-A','book-I','book-B','book-F','book-G','book-E'].reverse()}
                         })
                         
                         setCount(0)
                     
                     }else{
                         setProps((prevSizes) =>{
-                        return {...prevSizes, sequence:['book-C','book-D','book-H','book-A','book-A','book-I','book-B','book-F','book-G','book-E']}
+                        return {...prevSizes, sequence:['book-C','book-D','book-H','book-A','book-I','book-B','book-F','book-G','book-E']}
                         })  
                     }
                 }
@@ -76,13 +75,13 @@ function Board({setProps}) {
             <h2>Sort by</h2>
             <div className="button-wraper">
                 <button  id='aphabetic' className='filter-button' onClick={handleClick}>
-                    <div className="filter-aphabetic"></div>
+                    <figure className="filter-aphabetic"></figure>
                 </button>
                 <button id='colors' className="filter-button" onClick={handleClick}>
-                    <div className="filter-colors"></div>
+                    <figure className="filter-colors"></figure>
                 </button>
                 <button id='sizes' className="filter-button" onClick={handleClick}>
-                    <div  className="filter-sizes"></div>
+                    <figure  className="filter-sizes"></figure>
                 </button>
             </div>
 
