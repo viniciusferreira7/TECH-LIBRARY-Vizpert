@@ -7,15 +7,15 @@ function Board({setProps}) {
     const [count, setCount] = useState(0)
 
 
+    
+    //evet not affect child element
     const handleClick = (e) =>{
             $('.filter-button').removeClass('active')
             e.target.classList.add('active')
         
         
     }
-
     
-
     const findActive = () =>{
        
         if ($('.filter-button').hasClass('active')){
@@ -24,13 +24,13 @@ function Board({setProps}) {
                 
                     if(count >= 1){
                         setProps((prevAphabetic) =>{
-                            return {...prevAphabetic, sequence:['book-A', 'book-B','book-C','book-D','book-E','book-F','book-G','book-H','book-I'].reverse()}                        
+                            return {...prevAphabetic, sequence:['book-A', 'book-B','book-C','book-D','book-E','book-F'].reverse(), sequenceTwo:['book-I', 'book-H', 'book-G'].reverse()}                        
                         })
                         
                         setCount(0)
                     }else{
                         setProps((prevAphabetic) =>{
-                            return {...prevAphabetic, sequence:['book-A', 'book-B','book-C','book-D','book-E','book-F','book-G','book-H','book-I']}                        
+                        return {...prevAphabetic, sequenceOne:['book-A', 'book-B','book-C','book-D','book-E','book-F'], sequenceTwo:['book-I', 'book-H', 'book-G']}                        
                         })
 
                     }
@@ -38,14 +38,17 @@ function Board({setProps}) {
                 if($('#colors').hasClass('active')){
                    if(count >=1){
                     setProps((prevColors) =>{
-                        return {...prevColors, sequence:['book-B', 'book-C','book-A','book-I','book-E','book-H','book-D','book-F','book-G',].reverse()}
+                        return {...prevColors, sequenceOne:['book-B', 'book-C','book-A','book-E','book-D','book-F'].reverse()
+                        , sequenceTwo:['book-I', 'book-H', 'book-G'].reverse(),
+                    }
                     })
 
                     setCount(0)
 
                    }else{
                     setProps((prevColors) =>{
-                        return {...prevColors, sequence:['book-B', 'book-C','book-A','book-I','book-E','book-H','book-D','book-F','book-G',]}
+                        return {...prevColors, sequenceOne:['book-B', 'book-C','book-A','book-E','book-D','book-F'], 
+                        sequenceTwo:['book-I', 'book-H', 'book-G']}
                     })
                    }
                 }
@@ -53,14 +56,16 @@ function Board({setProps}) {
                     
                     if(count >= 1){
                         setProps((prevSizes) =>{
-                            return {...prevSizes, sequence:['book-C','book-D','book-H','book-A','book-I','book-B','book-F','book-G','book-E'].reverse()}
+                            return {...prevSizes, sequenceOne:['book-C','book-D','book-A','book-B','book-F','book-E'].reverse(),
+                             sequenceTwo:['book-G', 'book-I', 'book-H'].reverse()}
                         })
                         
                         setCount(0)
                     
                     }else{
                         setProps((prevSizes) =>{
-                        return {...prevSizes, sequence:['book-C','book-D','book-H','book-A','book-I','book-B','book-F','book-G','book-E']}
+                        return {...prevSizes, sequenceOne:['book-C','book-D','book-A','book-B','book-F','book-E'],
+                         sequenceTwo:['book-G', 'book-I', 'book-H']}
                         })  
                     }
                 }

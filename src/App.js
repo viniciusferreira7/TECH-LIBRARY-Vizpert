@@ -12,10 +12,7 @@ function App() {
 
     <div className="App">
       <Wall/>
-      <Logo/>
-      <Clock/>
-      <Bookcase/>
-      <Lady/>
+     
       <Floor/>
     </div>
   );
