@@ -8,52 +8,51 @@ html,body{
 }
 
 .board{
-    width:600px;
-    height: 250px;
+    width:100%;
+    max-width: 650px;
+    height: 100%;
+    max-height: 220px;
     background-image: url('../../assets/board.svg');
-    background-size: 100% 100%;
-    position: relative;
-    top:70%;
-    right: 30%;
-    z-index: 1;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom:-13%;
+    left:-48%;    
 }
 
 .board h2{
     color: #e7dfef;
-    font-size:15px;
+    font-size:12px;
     font-weight:400;
     font-family: "Roboto Slab";
     text-transform: uppercase;
     letter-spacing: 7px;
     position: absolute;
-    top: 20px;
-    right:110px;
+    top: 7%;
+    right:22%;
 }
 
 .button-wraper{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    width:260px ;
+    width: 100%;
+    max-width:180px ;
     height: 60px;
     position: absolute;
-    top: 45px;
-    right: 40px;
-    z-index: 99;
+    top: 18%;
+    right: 17%;
 }
 
 .filter-button{
-    width: 60px;
-    height: 64px;
+    width: 100%;
+    max-width:calc(100%  / 3.5);
+    height: 55px;
     background-image: url('../../assets/filter_button.svg');
-    background-size: cover;
+    background-size:cover;
     border: 0;
     background-color:transparent;
     cursor: pointer;
-}
-
-.filter-button:nth-of-type(2){
-    margin: 0 23px;
 }
 
 .active{
@@ -62,7 +61,7 @@ html,body{
 
 
 .filter-aphabetic{
-    width: 20px;
+    width: 15px;
     height: 20px;
     background-image: url('../../assets/filter_alphabetic.svg');
     background-size: 100% 100%;
@@ -92,24 +91,116 @@ html,body{
 }
 
 .Line{
-    width:210px;
+    width: 100%;
+    max-width:160px;
     height: 5px;
     background-color: #e7dfef;
     position: absolute;
-    bottom: 48%;
-    right:65px ;
+    bottom: 46%;
+    right:18%;
     transform: translateY(-50%);
 }
 
 .button-organize{
-    width: 300px;
-    height: 57px;
+    width: 100%;
+    max-width: 250px;
+    height: 42px;
     background-image: url('../../assets/button.svg');
-    background-position:contain ;
+    background-size:100% 100% ;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    bottom:50px;
-    right:20px;
+    bottom:22%;
+    right:11%;
     cursor: pointer;
+}
+
+@media screen and (max-width:1440px){
+    .board{
+        width:100%;
+        max-width: 500px;
+        bottom:-8%;
+        left:-30%;
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width:1280px){
+    .board{
+        width:100%;
+        max-width: 420px;
+        bottom:-9%;
+        left:-10%;
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width:960px){
+    .board{
+        width:100%;
+        bottom:-16%;
+        left:5%;
+        z-index: 1;
+    }
+
+    .board h2{
+        top: 10%;
+        right:10%;
+    }
+
+    .button-wraper{
+        top: 20%;
+        right: 2%;
+    }
+
+    .Line{
+        bottom: 42%;
+        right:4%;
+    }
+
+    .button-organize{
+        bottom:18%;
+        right:-7%;
+    }
+    
+}
+
+@media screen and (max-width:768px){
+    .board{
+        width:100%;
+        max-width: 380px;
+        background-size: contain;
+        background-position: bottom;
+        bottom:-22%;
+        left:10%;
+        z-index: 1;
+    }
+
+    .board h2{
+        top: 24%;
+        right:10%;
+    }
+
+    .button-wraper{
+        max-width:180px ;
+        height: 50px;
+        top: 35%;
+        right: 2%;
+    }
+
+    .filter-button{
+        width: 100%;
+        max-width:calc(100%  / 3.75);
+        background-size: 100% 100%;
+    }
+
+    .Line{
+        bottom: 35%;
+        right:4%;
+    }
+
+    .button-organize{
+        bottom:18%;
+        right:-7%;
+    }
 }

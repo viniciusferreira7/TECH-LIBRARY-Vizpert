@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html,body{
@@ -8,36 +9,42 @@ html,body{
 }
 
 .bookcase{
-    width: 1000px;
-    height: 520px;
+    width: 100%;
+    max-width: 800px;
+    min-height: 520px;
     background-image: url('../../assets/bookcase.svg');
-    background-color: transparent;
-    background-position:100% 100%;
+    background-size:cover;
+    background-position: 100px 5px;
     background-repeat: no-repeat;
     position: absolute;
-    top: 13%;
-    left: 21%;
+    top: 18%;
+    left: 30%;
 }
+
 
 .shelf-1{
     display: flex;
     justify-content:left;
-    width: 460px;
-    height: 113px;
+    width: 100%;
+    max-width: 450px;
+    height: 100%;
+    max-height: 115px;
     position: absolute;
-    top: 88px;
-    left: 234px;
+    top:18%;
+    left:17.4%;
     padding: 0 5px;
 }
 
 .shelf-2{
     display: flex;
     justify-content:right;
-    width: 460px;
-    height: 113px;
+    width: 100%;
+    max-width: 450px;
+    height: 100%;
+    max-height: 115px;
     position: absolute;
-    top: 260px;
-    left: 234px;
+    top:51%;
+    left:17.4%;
     padding: 0 5px;
 }
 
@@ -50,6 +57,7 @@ html,body{
 }
 
 .arrow{
+    width: 100%;
     width: 35px;
     height: 50px;
     background-color: transparent;
@@ -60,25 +68,23 @@ html,body{
 }
 
 .createSequenceOne{
-    top:110px ;
-    right: 270px;
+    top:23%;
+    right:20.5%;
 }
 
 .deleteSequenceOne{
-    top:110px ;
-    left: 190px;
-
+    top:23% ;
+    left:12.7%;
 }
 
 .createSequenceTwo{
-    bottom:175px ;
-    left: 190px;
+    top:56.8% ;
+    left:12.7%;
 }
 
 .deleteSequenceTwo{
-    bottom:175px ;
-    right: 270px;
-
+    top:56.8%;
+    right:20.5%;
 }
 
 #book-A{
@@ -117,6 +123,208 @@ html,body{
     background-image: url('../../assets/book_i.svg');
 }
 
-#book-J{
-    background-image: url('../../assets/book_a.svg');
+
+@media screen and (max-width:1520px){
+    .bookcase{
+        top: 20.5%;
+    }
+}
+
+@media screen and (max-width:1440px){
+    .bookcase{
+        top: 20.5%;
+    }
+}
+
+
+@media screen and (max-width:1280px){
+    .bookcase{
+        background-position:100px center;
+        top: 20.5%;
+        left:20%;
+    }
+}
+
+@media screen and (max-width:960px){
+    .bookcase{
+        background-size: contain;
+        background-position:90px center;
+        left:0;
+        top:21% ;
+    }
+   
+    .shelf-1{
+        top:18%;
+        left:16%;
+    }
+
+    .shelf-2{
+        top:51%;
+        left:16%;
+    }
+
+    .books{
+        width: calc(100% / 9);
+        height: 100%;
+    }
+
+    .createSequenceOne{
+        top:23%;
+        right:21.5%;
+    }
+
+    .deleteSequenceOne{
+        top:23% ;
+        left:11.6%;
+
+    }
+
+    .createSequenceTwo{
+        top:56% ;
+        left: 11.6%;
+    }
+
+    .deleteSequenceTwo{
+        top:56%;
+        right:21.5%;
+
+    }
+
+}
+
+@media screen and (max-width:768px){
+    .bookcase{
+        background-position:90px center;
+        top: 10.5%;
+    }
+
+    .shelf-1{
+        max-width: 415px;
+        top:19%;
+        left:17.4%;
+    }
+    
+    .shelf-2{
+        max-width: 415px;
+        height: 100%;
+        top:49%;
+        left:17.2%;
+    }
+
+    .arrow{
+        width: 32px;
+    }
+    
+    .createSequenceOne{
+        top:23%;
+        right:20.8%;
+    }
+    
+    .deleteSequenceOne{
+        top:23% ;
+        left:12.4%;
+    
+    }
+    
+    .createSequenceTwo{
+        top:56% ;
+        left: 12.4%;
+    }
+    
+    .deleteSequenceTwo{
+        top:56%;
+        right: 20.8%;
+    
+    }
+}
+
+@media screen and (max-width:640px){
+    
+    .shelf-1{
+        max-width: 350px;
+        max-height: 91px;
+        top:24.3%;
+        left:19.4%;
+    }
+    
+    .shelf-2{
+        max-width: 350px;
+        max-height: 91px;
+        top:49.5%;
+        left:19.4%;
+    }
+    
+    .arrow{
+        width:28px;    
+    }
+    
+    .createSequenceOne{
+        top:26.5%;
+        right:18%;
+    }
+    
+    .deleteSequenceOne{
+        top:26.5% ;
+        left:15%;
+    
+    }
+    
+    .createSequenceTwo{
+        top:54% ;
+        left: 15%;
+    }
+    
+    .deleteSequenceTwo{
+        top:54%;
+        right: 18%;
+    
+    }    
+}
+
+@media screen and (max-width:575px){
+    .bookcase{
+        background-position:90px center;
+        top: 11%;
+    }
+
+    .shelf-1{
+        max-width: 267px;
+        max-height: 70px;
+        top:30.3%;
+        left:24%;
+    }
+    
+    .shelf-2{
+        max-width: 267px;
+        max-height: 70px;
+        top:49.8%;
+        left:24.8%;
+        padding: 0;
+    }
+    
+    .arrow{
+        width:22px;    
+    }
+    
+    .createSequenceOne{
+        top:31%;
+        right:14.5%;
+    }
+    
+    .deleteSequenceOne{
+        top:31% ;
+        left:18.5%;
+    
+    }
+    
+    .createSequenceTwo{
+        top:51.5% ;
+        left:18.5%;
+    }
+    
+    .deleteSequenceTwo{
+        top:51.5%;
+        right:14.5%;
+    
+    }
 }

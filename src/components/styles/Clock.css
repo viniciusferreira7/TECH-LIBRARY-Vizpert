@@ -12,7 +12,97 @@ html,body{
     height: 180px;
     background-image: url('../../assets/clock_base.svg');
     position:absolute;
-    top: 90px;
+    top: 11%;
     left: 10%;
     background-size:cover;
+    border:8px dotted darkgoldenrod ;
+}
+
+.wraperMin{
+    width: 100%;
+    height: 100%;
+    width: 80px;
+    height: 80px;
+    border-radius:calc(100% / 2);
+    position: relative;
+    top: 25%;
+    left: 27%;
+    border:5px dotted dodgerblue ;
+}
+
+#longerPointer{
+    width:4px;
+    height:95%;
+    background-color: #9b6dbf;
+    position: relative;
+    left: 50%;
+    top:-45%;
+}
+
+/*
+.wraperHours{
+    width: 100%;
+    height: 100%;
+    width: 60px;
+    height: 60px;
+    border-radius:calc(100% / 2);
+    position: absolute;
+    top: 30.6%;
+    left: 32.6%;
+    border:5px dotted darkred;
+    transform: rotate(-720deg);
+    transition: 300s ease;
+}
+
+#smallPointer{
+    width:4px;
+    height:100%;
+    background-color: #633585;
+    position: relative;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+body:hover .wraperHours{
+    transform: rotate(360deg);
+    transition:216000s ease;
+}*/
+
+.wraperSeg{
+    width: 100%;
+    height: 100%;
+    width: 70px;
+    height: 70px;
+    border-radius:calc(100% / 2);
+    position: absolute;
+    top: 28%;
+    left: 30.4%;
+    border:5px dotted navy;
+}
+
+#finePointer{
+    width:4px;
+    height:95%;
+    background-color: #c79ee7;
+    position: relative;
+    left: 50%;
+    top:-45%;
+    transform: translateX(-50%);
+}
+
+body:hover .wraperSeg{
+    transition: 60s ease;
+}
+
+@media screen and (max-width:1280px){
+    .clock{
+        left: 2%;
+    }
+}
+
+@media screen and (max-width:1024px){
+    .clock{
+        display: none;
+    }
 }

@@ -188,7 +188,7 @@ function Bookcase(){
                 </Droppable>
             </DragDropContext>
 
-            <Board setProps={setSort}/>
+           <Board setProps={setSort}/>
         </div>
     )
 }

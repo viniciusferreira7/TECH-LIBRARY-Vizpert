@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import $ from 'jquery'
 import './styles/Board.css'
 
+
 function Board({setProps}) {
 
     const [count, setCount] = useState(0)
