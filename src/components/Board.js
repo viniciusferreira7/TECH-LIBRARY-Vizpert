@@ -25,7 +25,7 @@ function Board({setProps}) {
                 
                     if(count >= 1){
                         setProps((prevAphabetic) =>{
-                            return {...prevAphabetic, sequence:['book-A', 'book-B','book-C','book-D','book-E','book-F'].reverse(), sequenceTwo:['book-I', 'book-H', 'book-G'].reverse()}                        
+                            return {...prevAphabetic, sequenceOne:['book-A', 'book-B','book-C','book-D','book-E','book-F'].reverse(), sequenceTwo:['book-I', 'book-H', 'book-G'].reverse()}                        
                         })
                         
                         setCount(0)

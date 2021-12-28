@@ -12,10 +12,41 @@ html,body{
     height: 180px;
     background-image: url('../../assets/clock_base.svg');
     position:absolute;
-    top: 11%;
+    top: 14%;
     left: 10%;
-    background-size:cover;
-    border:8px dotted darkgoldenrod ;
+    background-size:100% 100%;
+}
+
+.center{
+    width: 5px;
+    height: 5px;
+    background-color: #9b6dbf;
+    position: relative;
+    top: 48%;
+    left: 47%;
+    z-index: 4;
+}
+
+.wraperSeg{
+    width: 100%;
+    height: 100%;
+    width: 70px;
+    height: 70px;
+    border-radius:calc(100% / 2);
+    position: absolute;
+    top: 30%;
+    left: 29.4%;
+    z-index: 1;
+}
+
+#finePointer{
+    width:2.2px;
+    height:85%;
+    background-color: #c79ee7;
+    position: relative;
+    left: 50%;
+    top:-35%;
+    transform: translateX(-50%);
 }
 
 .wraperMin{
@@ -25,21 +56,20 @@ html,body{
     height: 80px;
     border-radius:calc(100% / 2);
     position: relative;
-    top: 25%;
-    left: 27%;
-    border:5px dotted dodgerblue ;
+    top: 25.08%;
+    left: 25.15%;
+    z-index: 2;
 }
 
 #longerPointer{
     width:4px;
-    height:95%;
+    height:75%;
     background-color: #9b6dbf;
     position: relative;
     left: 50%;
-    top:-45%;
+    top:-25%;
 }
 
-/*
 .wraperHours{
     width: 100%;
     height: 100%;
@@ -47,52 +77,19 @@ html,body{
     height: 60px;
     border-radius:calc(100% / 2);
     position: absolute;
-    top: 30.6%;
+    top: 31.8%;
     left: 32.6%;
-    border:5px dotted darkred;
-    transform: rotate(-720deg);
-    transition: 300s ease;
+    border-radius: 30px;
 }
 
 #smallPointer{
-    width:4px;
-    height:100%;
+    width:70%;
+    height:4PX;
     background-color: #633585;
     position: relative;
-    top: -50%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-body:hover .wraperHours{
-    transform: rotate(360deg);
-    transition:216000s ease;
-}*/
-
-.wraperSeg{
-    width: 100%;
-    height: 100%;
-    width: 70px;
-    height: 70px;
-    border-radius:calc(100% / 2);
-    position: absolute;
-    top: 28%;
-    left: 30.4%;
-    border:5px dotted navy;
-}
-
-#finePointer{
-    width:4px;
-    height:95%;
-    background-color: #c79ee7;
-    position: relative;
-    left: 50%;
-    top:-45%;
-    transform: translateX(-50%);
-}
-
-body:hover .wraperSeg{
-    transition: 60s ease;
+    top: 50%;
+    left: 47%;
+    z-index: 3;
 }
 
 @media screen and (max-width:1280px){

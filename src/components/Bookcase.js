@@ -22,6 +22,7 @@ function Bookcase(){
             ['book-I', 'book-H', 'book-G']}
     )
 
+    //Create a new book on the first shelf.
     const createSequenceOne = () =>{
         if(countOne >= 0){
              const item = Array.from(sort.sequenceOne)
@@ -37,19 +38,21 @@ function Bookcase(){
          else if(sort.sequenceTwo[sort.sequenceTwo.length - 1] === undefined){
              return;
          }
- }
+    }
 
- const deleteSequenceOne = ()=>{
-     const item = Array.from(sort.sequenceOne)
-     item.splice(0, 1)
+    //Delete book on the first shelf.
+    const deleteSequenceOne = ()=>{
+        const item = Array.from(sort.sequenceOne)
+        item.splice(0, 1)
 
-     setSort((prevSequence) =>{
-         return{...prevSequence, sequenceOne:item}
-     })
- 
+        setSort((prevSequence) =>{
+            return{...prevSequence, sequenceOne:item}
+        })
+    
 
- }
+    }
 
+    //Create a new book on the second shelf.
     const createSequenceTwo = () =>{
            if(countTwo >= 0){
                 const item = Array.from(sort.sequenceTwo)
@@ -67,6 +70,7 @@ function Bookcase(){
             }
     }
 
+    //Delete book on the second shelf.
     const deleteSequenceTwo = ()=>{
         const item = Array.from(sort.sequenceTwo)
         item.splice(sort.sequenceTwo.length - 1, 1)
@@ -78,8 +82,7 @@ function Bookcase(){
 
     }
 
-    console.log(sort.sequenceTwo)
-
+    //Server update the position of the books after moving the first shelf.
     function handleOnDragEndOne (result){
         if(!result.destination) return;
         
@@ -96,6 +99,7 @@ function Bookcase(){
 
     }
 
+    //Server update the position of the books after moving the second shelf.
     function handleOnDragEndTwo (result){
         if(!result.destination) return;
         
@@ -110,6 +114,12 @@ function Bookcase(){
     
             })
 
+    }
+
+    const handleChange = (e) => {
+        const number = Math.round(Math.random() * (5 - 1) + 1)
+        console.log(number)
+        e.target.id = `${sort.sequenceOne[number]}`
     }
     
 
@@ -147,6 +157,7 @@ function Bookcase(){
                                             ref={provided.innerRef}
                                             {...provided.draggableProps}
                                             {...provided.dragHandleProps}
+                                            onClick={handleChange}
                                         >
                                         </figure>
                                     )}
@@ -188,11 +199,9 @@ function Bookcase(){
                 </Droppable>
             </DragDropContext>
 
-           <Board setProps={setSort}/>
+           <Board setProps={setSort} props={sort}/>
         </div>
     )
 }
 
 export default Bookcase
-
-//Espaçamento  entre Bookcase, logo e Clock

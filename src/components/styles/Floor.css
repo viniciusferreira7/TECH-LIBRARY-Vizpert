@@ -12,12 +12,20 @@ html,body{
     height: 30%;
     min-height: calc(746px * 0.45);
     background-image: url('../../assets/ground.svg');
-    background-position:100% 100%;
+    background-size:contain;
+    background-repeat: repeat;
+    background-color: #633585;
 }
 
 @media screen and (max-width:768px){
     .floor{
         min-height:calc(746px * 0.55);
 
+    }
+}
+
+@media screen and (max-width:480px){
+    .floor{
+        background-size:100%;
     }
 }
