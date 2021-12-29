@@ -9,7 +9,7 @@ html,body{
 
 .wall{
     width: 100%;
-    height:70%;
+    height:55%;
     min-height:calc(746px * 0.55);
     background-image: url('../../assets/bg_stripes.svg');
     background-size:contain;

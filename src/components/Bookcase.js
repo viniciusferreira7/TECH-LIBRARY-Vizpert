@@ -7,134 +7,166 @@ import './styles/Bookcase.css'
 
 
 function Bookcase(){
-   
-    //Unable draggble wigth id
-    // click not propagation for childreen
 
-    const [countOne, setCountOne] = useState(2)
+    //Control book change with click to not affect book movement.
+    const [click, setClick] = useState(0)
+   
+    //Limit the number of book added to the shelf.
+    const [countOne, setCountOne] = useState(3)
     const [countTwo, setCountTwo] = useState(5)
    
+    //The order and initial quantity of books on each shelf.
     const [sort, setSort] = useState({
-        sequenceOne:
+        shelfOne:
             ['book-A', 'book-B','book-C','book-D','book-E','book-F'],
 
-        sequenceTwo:
-            ['book-I', 'book-H', 'book-G']}
+        shelfTwo:
+            ['book-J','book-I', 'book-H', 'book-G']}
     )
 
-    //Create a new book on the first shelf.
-    const createSequenceOne = () =>{
+    //Funtion to create a new book on the first shelf.
+    const createShelfOne = () =>{
         if(countOne >= 0){
-             const item = Array.from(sort.sequenceOne)
-             const reorder = item.push(`${sort.sequenceTwo[countOne]}`)
+             const item = Array.from(sort.shelfOne)
+             const reorder = item.push(`${sort.shelfTwo[countOne]}`)
              console.log(reorder)
 
-             setSort((prevSequence) =>{
-                 return{...prevSequence, sequenceOne:item}
+             setSort((prevShelf) =>{
+                 return{...prevShelf, shelfOne:item}
              })
 
              setCountOne(countOne - 1)
          }
-         else if(sort.sequenceTwo[sort.sequenceTwo.length - 1] === undefined){
+         else if(sort.shelfTwo[sort.shelfTwo.length - 1] === undefined){
              return;
          }
     }
 
-    //Delete book on the first shelf.
-    const deleteSequenceOne = ()=>{
-        const item = Array.from(sort.sequenceOne)
+    //Funtion to delete book on the first shelf.
+    const deleteShelfOne = ()=>{
+        const item = Array.from(sort.shelfOne)
+
         item.splice(0, 1)
 
-        setSort((prevSequence) =>{
-            return{...prevSequence, sequenceOne:item}
+        setSort((prevShelf) =>{
+            return{...prevShelf, shelfOne:item}
         })
-    
-
     }
 
-    //Create a new book on the second shelf.
-    const createSequenceTwo = () =>{
+    // Funtion to create a new book on the second shelf.
+    const createShelfTwo = () =>{
            if(countTwo >= 0){
-                const item = Array.from(sort.sequenceTwo)
-                const reorder = item.push(`${sort.sequenceOne[countTwo]}`)
+                const item = Array.from(sort.shelfTwo)
+                const reorder = item.push(`${sort.shelfOne[countTwo]}`)
                 console.log(reorder)
 
-                setSort((prevSequence) =>{
-                    return{...prevSequence, sequenceTwo:item}
+                setSort((prevShelf) =>{
+                    return{...prevShelf, shelfTwo:item}
                 })
 
                 setCountTwo(countTwo - 1)
             }
-            else if(sort.sequenceTwo[sort.sequenceTwo.length - 1] === undefined){
+            else if(sort.shelfTwo[sort.shelfTwo.length - 1] === undefined){
                 return;
             }
     }
 
-    //Delete book on the second shelf.
-    const deleteSequenceTwo = ()=>{
-        const item = Array.from(sort.sequenceTwo)
-        item.splice(sort.sequenceTwo.length - 1, 1)
+    //Funtion to delete book on the second shelf.
+    const deleteShelfTwo = ()=>{
+        const item = Array.from(sort.shelfTwo)
+        
+        item.splice(sort.shelfTwo.length - 1, 1)
 
-        setSort((prevSequence) =>{
-            return{...prevSequence, sequenceTwo:item}
+        setSort((prevShelf) =>{
+            return{...prevShelf, shelfTwo:item}
         })
-    
-
     }
 
-    //Server update the position of the books after moving the first shelf.
+    //Funtion to update the position of the books after moving the first shelf.
     function handleOnDragEndOne (result){
         if(!result.destination) return;
         
-        const itemsOne =Array.from(sort.sequenceOne);
+        const itemsOne =Array.from(sort.shelfOne);
         const [reorderedItemOne] = itemsOne.splice(result.source.index, 1);
         
         itemsOne.splice(result.destination.index, 0, reorderedItemOne)
-        console.log(itemsOne)
 
-        setSort((prevSequence) => {
-            return{...prevSequence, sequenceOne:itemsOne}
+        setSort((prevShelf) => {
+            return{...prevShelf, shelfOne:itemsOne}
             })
-
-
     }
 
-    //Server update the position of the books after moving the second shelf.
+    //Function to update the position of the books after moving the second shelf.
     function handleOnDragEndTwo (result){
         if(!result.destination) return;
         
-        const itemsTwo =Array.from(sort.sequenceTwo);
+        const itemsTwo =Array.from(sort.shelfTwo);
         const [reorderedItemTwo] = itemsTwo.splice(result.source.index, 1);
         
         itemsTwo.splice(result.destination.index, 0, reorderedItemTwo)
-        console.log(itemsTwo)
 
-        setSort((prevSequence) => {
-            return{...prevSequence, sequenceTwo:itemsTwo}
+        setSort((prevShelf) => {
+            return{...prevShelf, shelfTwo:itemsTwo}
     
             })
 
     }
 
-    const handleChange = (e) => {
-        const number = Math.round(Math.random() * (5 - 1) + 1)
-        console.log(number)
-        e.target.id = `${sort.sequenceOne[number]}`
+    const shelfComplete = ['book-A', 'book-B','book-C','book-D','book-E','book-F','book-G', 'book-H', 'book-I','book-J']
+
+    //Function to change books with two clicks on the first shelf
+    const handleChangeOne = (e) => {
+        setClick(click + 1)
+        if(click === 2){
+            const number = Math.round((Math.random() * (9 - 1) + 1))
+            const item = Array.from(sort.shelfOne)
+            const index =sort.shelfOne.indexOf(`${e.target.id}`)
+            item.splice(index, 1, `${shelfComplete[number]}`)
+            
+           
+            setSort(prevShelf =>{
+                return {...prevShelf, shelfOne:item}
+            })
+
+            setClick(click - 1)
+          
+        }
     }
+
+    //Function to change books with two clicks on the second shelf
+    const handleChangeTwo = (e) => {
+        setClick(click + 1)
+        if(click === 2){
+            const number = Math.round((Math.random() * (9 - 1) + 1))
+            const item = Array.from(sort.shelfTwo)
+            const index =sort.shelfTwo.indexOf(`${e.target.id}`)
+            item.splice(index, 1, `${shelfComplete[number]}`)
+            
+           
+            setSort(prevShelf =>{
+                return {...prevShelf, shelfTwo:item}
+            })
+
+            setClick(click - 1)
+          
+        }
+    }
+
+    console.log(sort.shelfOne)
     
 
     return(
         <div className="bookcase">
             <button 
-            onClick={createSequenceOne} className="createSequenceOne arrow"></button>
+            onClick={createShelfOne} className="createShelfOne arrow"></button>
 
-            <button onClick={deleteSequenceOne} className="deleteSequenceOne arrow">
+            <button onClick={deleteShelfOne} className="deleteShelfOne arrow">
             </button>
 
             <button 
-            onClick={createSequenceTwo} className="createSequenceTwo arrow"></button>
+            onClick={createShelfTwo} className="createShelfTwo arrow"></button>
 
-            <button onClick={deleteSequenceTwo} className="deleteSequenceTwo arrow">
+            <button onClick={deleteShelfTwo} className="deleteShelfTwo arrow">
             </button>
 
 
@@ -149,7 +181,7 @@ function Bookcase(){
                     ref={provided.innerRef}
                     {...provided.droppableProps}
                     >
-                        {sort.sequenceOne.map((item, index) =>{
+                        {sort.shelfOne.map((item, index) =>{
                             return(
                                 <Draggable index={index}  key={index} draggableId={item}>
                                     {(provided) => (
@@ -157,7 +189,7 @@ function Bookcase(){
                                             ref={provided.innerRef}
                                             {...provided.draggableProps}
                                             {...provided.dragHandleProps}
-                                            onClick={handleChange}
+                                            onClick={handleChangeOne}
                                         >
                                         </figure>
                                     )}
@@ -175,11 +207,11 @@ function Bookcase(){
                 {(provided, snapshot) => (
                     <div
                     className="shelf-2"
-                    style={{cursor: snapshot.isDraggingOver ? 'grab' : 'grabbing' }}
+                    style={{cursor: snapshot.isDraggingOver ? 'grabbing' : 'grab' }}
                     ref={provided.innerRef}
                     {...provided.droppableProps}
                     >
-                        {sort.sequenceTwo.map((item, index) =>{
+                        {sort.shelfTwo.map((item, index) =>{
                             return(
                                 <Draggable index={index}  key={index} draggableId={item}>
                                     {(provided) => (
@@ -187,6 +219,7 @@ function Bookcase(){
                                             ref={provided.innerRef}
                                             {...provided.draggableProps}
                                             {...provided.dragHandleProps}
+                                            onClick={handleChangeTwo}
                                         >
                                         </figure>
                                     )}
@@ -199,7 +232,7 @@ function Bookcase(){
                 </Droppable>
             </DragDropContext>
 
-           <Board setProps={setSort} props={sort}/>
+           <Board setSort={setSort} sort={sort}/>
         </div>
     )
 }

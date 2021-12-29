@@ -3,70 +3,91 @@ import $ from 'jquery'
 import './styles/Board.css'
 
 
-function Board({setProps}) {
+function Board({setSort, sort}) {
 
-    const [count, setCount] = useState(0)
-
+    //Is for when clicking the second time reverses the order
+    const [click, setClick] = useState(0)
 
     
     //evet not affect child element
     const handleClick = (e) =>{
             $('.filter-button').removeClass('active')
+
             e.target.classList.add('active')
-        
-        
     }
     
     const findActive = () =>{
        
         if ($('.filter-button').hasClass('active')){
-            setCount(count + 1)
-                if($('#aphabetic').hasClass('active')){
-                
-                    if(count >= 1){
-                        setProps((prevAphabetic) =>{
-                            return {...prevAphabetic, sequenceOne:['book-A', 'book-B','book-C','book-D','book-E','book-F'].reverse(), sequenceTwo:['book-I', 'book-H', 'book-G'].reverse()}                        
-                        })
-                        
-                        setCount(0)
-                    }else{
-                        setProps((prevAphabetic) =>{
-                        return {...prevAphabetic, sequenceOne:['book-A', 'book-B','book-C','book-D','book-E','book-F'], sequenceTwo:['book-I', 'book-H', 'book-G']}                        
-                        })
 
+            setClick(click + 1)
+
+                if($('#aphabetic').hasClass('active')){
+
+                        let aphabetic = ['book-A', 'book-B','book-C','book-D','book-E','book-F', 'book-G','book-H','book-I','book-J']
+
+                        let filterOne = aphabetic.filter(item => sort.shelfOne.includes(item))
+                        let filterTwo = aphabetic.filter(item => sort.shelfTwo.includes(item))
+
+                    if(click >= 1){
+
+                        setSort(prevAphabetic =>{
+                            return{...prevAphabetic, shelfOne:filterOne.reverse(),shelfTwo:filterTwo.reverse()}
+                        })
+                        setClick(0)
+                        
+                    }else{
+
+                        setSort(prevAphabetic =>{
+                            return{...prevAphabetic, shelfOne:filterOne,
+                                shelfTwo:filterTwo}
+                        })
                     }
                 }
                 if($('#colors').hasClass('active')){
-                   if(count >=1){
-                    setProps((prevColors) =>{
-                        return {...prevColors, sequenceOne:['book-B', 'book-C','book-A','book-E','book-D','book-F'].reverse()
-                        , sequenceTwo:['book-I', 'book-H', 'book-G'].reverse(),
-                    }
-                    })
 
-                    setCount(0)
+                    let colors = ['book-B', 'book-C','book-A','book-J','book-I','book-E','book-H', 'book-D', 'book-G','book-F']
+
+                    let filterOne = colors.filter(item => sort.shelfOne.includes(item))
+                    let filterTwo = colors.filter(item => sort.shelfTwo.includes(item))
+
+                   if(click >=1){
+
+                        setSort(prevColors =>{
+                            return {...prevColors, shelfOne:filterOne.reverse(),
+                                shelfTwo:filterTwo.reverse()}
+                        })
+                        setClick(0)
 
                    }else{
-                    setProps((prevColors) =>{
-                        return {...prevColors, sequenceOne:['book-B', 'book-C','book-A','book-E','book-D','book-F'], 
-                        sequenceTwo:['book-I', 'book-H', 'book-G']}
-                    })
+                       
+                        setSort(prevColors =>{
+                            return {...prevColors, shelfOne:filterOne,
+                                shelfTwo:filterTwo}
+                        })
+
                    }
                 }
                 if($('#sizes').hasClass('active')){
-                    
-                    if(count >= 1){
-                        setProps((prevSizes) =>{
-                            return {...prevSizes, sequenceOne:['book-C','book-D','book-A','book-B','book-F','book-E'].reverse(),
-                             sequenceTwo:['book-G', 'book-I', 'book-H'].reverse()}
-                        })
+
+                    let sizes = ['book-C','book-D','book-H','book-J', 'book-A', 'book-I','book-B','book-F','book-G', 'book-E']
+
+                    let filterOne = sizes.filter(item => sort.shelfOne.includes(item))
+                    let filterTwo = sizes.filter(item => sort.shelfTwo.includes(item))
+
+                    if(click >= 1){
                         
-                        setCount(0)
+                        setSort(prevSizes =>{
+                            return {...prevSizes, shelfOne:filterOne.reverse(),
+                            shelfTwo:filterTwo.reverse()}
+                        })
+                        setClick(0)
                     
                     }else{
-                        setProps((prevSizes) =>{
-                        return {...prevSizes, sequenceOne:['book-C','book-D','book-A','book-B','book-F','book-E'],
-                         sequenceTwo:['book-G', 'book-I', 'book-H']}
+                        
+                        setSort(prevSizes =>{
+                            return {...prevSizes, shelfOne:filterOne,
+                                shelfTwo:filterTwo}
                         })  
                     }
                 }
