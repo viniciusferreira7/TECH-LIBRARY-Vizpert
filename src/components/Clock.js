@@ -19,9 +19,6 @@ function Clock() {
    const minutes = new Date().getMinutes();
    const hours = new Date().getHours();
 
-   var degress = hours > 12 ? 15 : 30
-
-
     return (
 
         <div className='clock'>
@@ -32,7 +29,7 @@ function Clock() {
             <div className="wraperMin" style={{transform:`rotate(${minutes * 6}deg)`}}>
                 <figure id="longerPointer"></figure>
             </div>
-            <div className="wraperHours" style={{transform:`rotate(${hours * degress}deg)`}}>
+            <div className="wraperHours" style={{transform:`rotate(${hours * 30}deg)`}}>
                 <figure id="smallPointer"></figure>
             </div>
         </div>
