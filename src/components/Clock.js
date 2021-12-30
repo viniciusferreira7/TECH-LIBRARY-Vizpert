@@ -21,7 +21,6 @@ function Clock() {
 
    var degress = hours > 12 ? 15 : 30
 
-   console.log(hours * 30)
 
     return (
 
