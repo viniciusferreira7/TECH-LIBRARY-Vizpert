@@ -18,7 +18,12 @@ html,body{
 @media screen and (max-width:768px){
     .wall{
         min-height:calc(746px * 0.45);
-
     }
 }
 
+
+@media screen and (max-width:376px){
+    .wall{
+        min-height:calc(812px * 0.5);
+    } 
+}

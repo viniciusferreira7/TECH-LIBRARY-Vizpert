@@ -129,6 +129,7 @@ function Bookcase(){
             })
 
             setClick(click - 1)
+            console.log(sort)
           
         }
     }
@@ -151,8 +152,6 @@ function Bookcase(){
           
         }
     }
-
-    console.log(sort.shelfOne)
     
 
     return(
@@ -173,62 +172,64 @@ function Bookcase(){
 
             <DragDropContext onDragEnd={handleOnDragEndOne}>
             
-            <Droppable droppableId="droppable-1" direction="horizontal">
-                {(provided, snapshot) => (
-                    <div
-                    className="shelf-1"
-                    style={{cursor: snapshot.isDraggingOver ? 'grab' : 'grabbing' }}
-                    ref={provided.innerRef}
-                    {...provided.droppableProps}
-                    >
-                        {sort.shelfOne.map((item, index) =>{
-                            return(
-                                <Draggable index={index}  key={index} draggableId={item}>
-                                    {(provided) => (
-                                        <figure id={item} className="books" 
-                                            ref={provided.innerRef}
-                                            {...provided.draggableProps}
-                                            {...provided.dragHandleProps}
-                                            onClick={handleChangeOne}
-                                        >
-                                        </figure>
-                                    )}
-                                </Draggable>
-                            )
-                        })}
-                        {provided.placeholder}
-                    </div>
-                )}
+                <Droppable droppableId="droppable-1" direction="horizontal">
+                    {(provided, snapshot) => (
+                        <div
+                        className="shelf-1"
+                        style={{cursor: snapshot.isDraggingOver ? 'grab' : 'grabbing' }}
+                        ref={provided.innerRef}
+                        {...provided.droppableProps}
+                        >
+                            {sort.shelfOne.map((item, index) =>{
+                                return(
+                                    <Draggable index={index}  key={index} draggableId={item}>
+                                        {(provided) => (
+                                            <figure 
+                                                id={item} 
+                                                className="books" 
+                                                ref={provided.innerRef}
+                                                {...provided.draggableProps}
+                                                {...provided.dragHandleProps}
+                                                onClick={handleChangeOne}
+                                            >
+                                            </figure>
+                                        )}
+                                    </Draggable>
+                                )
+                            })}
+                            {provided.placeholder}
+                        </div>
+                    )}
                 </Droppable>
             </DragDropContext>
 
             <DragDropContext onDragEnd={handleOnDragEndTwo}>
                 <Droppable droppableId="droppable-2" direction="horizontal">
-                {(provided, snapshot) => (
-                    <div
-                    className="shelf-2"
-                    style={{cursor: snapshot.isDraggingOver ? 'grabbing' : 'grab' }}
-                    ref={provided.innerRef}
-                    {...provided.droppableProps}
-                    >
-                        {sort.shelfTwo.map((item, index) =>{
-                            return(
-                                <Draggable index={index}  key={index} draggableId={item}>
-                                    {(provided) => (
-                                        <figure id={item} className="books" 
-                                            ref={provided.innerRef}
-                                            {...provided.draggableProps}
-                                            {...provided.dragHandleProps}
-                                            onClick={handleChangeTwo}
-                                        >
-                                        </figure>
-                                    )}
-                                </Draggable>
-                            )
-                        })}
-                        {provided.placeholder}
-                    </div>
-                )}
+                    {(provided, snapshot) => (
+                        <div
+                        className="shelf-2"
+                        style={{cursor: snapshot.isDraggingOver ? 'grabbing' : 'grab' }}
+                        ref={provided.innerRef}
+                        {...provided.droppableProps}
+                        >
+                            {sort.shelfTwo.map((item, index) =>{
+                                return(
+                                    <Draggable index={index}  key={index} draggableId={item}>
+                                        {(provided) => (
+                                            <figure id={item} className="books" 
+                                                ref={provided.innerRef}
+                                                {...provided.draggableProps}
+                                                {...provided.dragHandleProps}
+                                                onClick={handleChangeTwo}
+                                            >
+                                            </figure>
+                                        )}
+                                    </Draggable>
+                                )
+                            })}
+                            {provided.placeholder}
+                        </div>
+                    )}
                 </Droppable>
             </DragDropContext>
 

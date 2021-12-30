@@ -32,7 +32,6 @@ html,body{
     position: absolute;
     top:18%;
     left:17.2%;
-    border-radius: 4px solid black;
 }
 
 .shelf-2{
@@ -333,9 +332,9 @@ html,body{
 }
 
 
-@media screen and (max-width:480px){
+@media screen and (max-width:481px){
     .bookcase{
-        background-position:24.3px center;
+        background-position:67px center;
         top: 11.5%;
         background-size: 498px 300px;
     }
@@ -344,16 +343,14 @@ html,body{
         max-width: 270px;
         max-height: 74px;
         top:30.2%;
-        left:15.3%;
-        border: 2px dotted rgba(0, 0, 0, 1);
+        left:21.7%;
     }
     
     .shelf-2{
         max-width: 270px;
         max-height: 74px;
         top:48.9%;
-        left:15.3%;
-        border: 2px dotted rgba(0, 0, 0, 1);
+        left:21.7%;
     }
 
     .books{
@@ -362,29 +359,128 @@ html,body{
         background-size:100% 100%;
     }
     
-    .arrow{
-        width:18px;
-    }
-    
     .createShelfOne{
-        top:31.5%;
-        right:11.4%;
+        right:18.2%;
     }
     
     .deleteShelfOne{
-        top:31.5% ;
-        left:10.5%;
-    
+        left:17.5%;    
     }
     
     .createShelfTwo{
-        top:51.5% ;
-        left:10.5%;
+        left:17.5%;
     }
     
     .deleteShelfTwo{
-        top:51.5%;
-        right:11.4%;
+        right:18.2%;
+    
+    }
+}
+
+
+@media screen and (max-width:415px){
+    .bookcase{
+        background-position:34px center;
+        top: 10%;
+        background-size: 498px 300px;
+    }
+
+    .shelf-1{
+        max-width: 270px;
+        max-height: 74px;
+        top:30.2%;
+        left:17%;
+        border: 2.5px solid rgba(0, 0, 0, 0);
+    }
+    
+    .shelf-2{
+        max-width: 270px;
+        max-height: 74px;
+        top:48.9%;
+        left:17%;
+        border: 2.5px solid rgba(0, 0, 0, 0);
+    }
+
+    .books{
+        width: calc(100% / 10);;
+        height: 100%;
+        background-size:100% 100%;
+    }
+
+    .arrow{
+        width:18px ;
+    }
+    
+    .createShelfOne{
+        top: 31.5%;
+        right:13.2%;
+    }
+    
+    .deleteShelfOne{
+        top: 31.5%;
+        left:12.2%;    
+    }
+    
+    .createShelfTwo{
+        left:12.2%;
+    }
+    
+    .deleteShelfTwo{
+        right:13.2%;
+    
+    }
+}
+
+
+@media screen and (max-width:376px){
+    .bookcase{
+        background-position:20px center;
+        top: 19%;
+        background-size: 498px 300px;
+    }
+
+    .shelf-1{
+        max-width: 270px;
+        max-height: 74px;
+        top:30.2%;
+        left:15%;
+        border: 2.5px solid rgba(0, 0, 0, 0);
+    }
+    
+    .shelf-2{
+        max-width: 270px;
+        max-height: 74px;
+        top:48.9%;
+        left:15%;
+        border: 2.5px solid rgba(0, 0, 0, 0);
+    }
+
+    .books{
+        width: calc(100% / 10);;
+        height: 100%;
+        background-size:100% 100%;
+    }
+
+    .arrow{
+        width:17px ;
+    }
+    
+    .createShelfOne{
+        top: 31.5%;
+        right:8%;
+    }
+    
+    .deleteShelfOne{
+        top: 31.5%;
+        left:10%;    
+    }
+    
+    .createShelfTwo{
+        left:10%;
+    }
+    
+    .deleteShelfTwo{
+        right:8%;
     
     }
 }

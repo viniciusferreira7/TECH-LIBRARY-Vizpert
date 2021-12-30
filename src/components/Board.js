@@ -9,13 +9,14 @@ function Board({setSort, sort}) {
     const [click, setClick] = useState(0)
 
     
-    //evet not affect child element
+    //Function to add Active class in the element I clicked
     const handleClick = (e) =>{
             $('.filter-button').removeClass('active')
 
             e.target.classList.add('active')
     }
     
+    //Function to find thw button with the Active class
     const findActive = () =>{
        
         if ($('.filter-button').hasClass('active')){

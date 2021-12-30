@@ -8,13 +8,14 @@ html,body{
 }
 
 .clock{
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     background-image: url('../../assets/clock_base.svg');
     position:absolute;
     top: 14%;
     left: 10%;
-    background-size:100% 100%;
+    background-size:cover;
+    background-position: center;
 }
 
 .center{
@@ -22,8 +23,8 @@ html,body{
     height: 5px;
     background-color: #9b6dbf;
     position: relative;
-    top: 48%;
-    left: 47%;
+    top: 50%;
+    left: 50%;
     z-index: 4;
 }
 
@@ -33,10 +34,9 @@ html,body{
     width: 70px;
     height: 70px;
     border-radius:calc(100% / 2);
-    position: absolute;
-    top: 30%;
-    left: 29.4%;
-    z-index: 1;
+    position:absolute;
+    top:30%;
+    left:28%;
 }
 
 #finePointer{
@@ -56,8 +56,8 @@ html,body{
     height: 80px;
     border-radius:calc(100% / 2);
     position: relative;
-    top: 25.08%;
-    left: 25.15%;
+    top:24%;
+    left:25%;
     z-index: 2;
 }
 
@@ -77,17 +77,18 @@ html,body{
     height: 60px;
     border-radius:calc(100% / 2);
     position: absolute;
-    top: 31.8%;
-    left: 32.6%;
+    top: 32%;
+    left: 32%;
     border-radius: 30px;
+    border: 2px solid black;
 }
 
 #smallPointer{
-    width:70%;
-    height:4PX;
+    width:4px;
+    height:70%;
     background-color: #633585;
     position: relative;
-    top: 50%;
+    top: -20%;
     left: 47%;
     z-index: 3;
 }

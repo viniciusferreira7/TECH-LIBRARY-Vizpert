@@ -3,7 +3,6 @@ import './styles/Floor.css'
 function Floor() {
     return (
         <div className='floor'>
-
         </div>
     )
 }

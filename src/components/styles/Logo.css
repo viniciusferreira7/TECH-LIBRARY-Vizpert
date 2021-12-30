@@ -9,12 +9,13 @@ html,body{
 
 .logo{
     width: 100%;
-    max-width: 250px;
+    max-width: 235px;
     height: 100%;
-    max-height: 250px;
+    max-height: 235px;
     background-image: url('../../assets/logo.svg');
+    background-size:100% 100%;
     position: absolute;
-    top: 6%;
+    top: 12%;
     right: 4.5%;
 }
 
@@ -45,6 +46,17 @@ html,body{
         max-width:145px ;
         max-height:145px ;
         top: 3%;
+        right:50%;
+        transform: translateX(50%);
+    }
+}
+
+
+@media screen and (max-width:376px){
+    .logo{
+        max-width:165px ;
+        max-height:165px ;
+        top: 6%;
         right:50%;
         transform: translateX(50%);
     }

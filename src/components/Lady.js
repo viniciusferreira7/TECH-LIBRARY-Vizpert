@@ -4,7 +4,6 @@ import './styles/Lady.css';
 function Lady() {
     return (
         <div className='lady'>
-            
         </div>
     )
 }
