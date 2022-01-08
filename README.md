@@ -1,4 +1,4 @@
-# TECH LIBRABRY Vizpert
+# TECH LIBRARY Vizpert
 
 ## Funcionalidades:
 

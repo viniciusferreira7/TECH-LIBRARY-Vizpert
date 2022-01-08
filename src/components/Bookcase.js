@@ -37,9 +37,6 @@ function Bookcase(){
 
              setCountOne(countOne - 1)
          }
-         else if(sort.shelfTwo[sort.shelfTwo.length - 1] === undefined){
-             return;
-         }
     }
 
     //Funtion to delete book on the first shelf.
@@ -66,9 +63,7 @@ function Bookcase(){
 
                 setCountTwo(countTwo - 1)
             }
-            else if(sort.shelfTwo[sort.shelfTwo.length - 1] === undefined){
-                return;
-            }
+
     }
 
     //Funtion to delete book on the second shelf.
